@@ -8,15 +8,6 @@ Uma empresa que opera um Order Management System em produção decidiu, numa reu
 
 A regra central é que nada pode ser inventado. Cada requisito, decisão e restrição precisa apontar para uma fala da reunião ou para um arquivo real do repositório. Isso exige separar o que foi decidido do que foi descartado ou adiado. O código da aplicação (`src/`, `prisma/`, `tests/`) não foi alterado: a entrega é só documental.
 
-## Ferramentas de IA utilizadas
-
-| Ferramenta | Papel |
-|---|---|
-| **Cursor, modo Plan** (agente com modelo Claude) | Leitura do enunciado, da transcrição e do código; classificação de decisões, descartes e adiamentos; plano de implementação revisado antes de qualquer escrita |
-| **Cursor, modo Agent** (mesmo modelo) | Escrita dos ADRs, RFC, FDD, PRD, tracker e deste README, lendo os arquivos reais do repositório antes de citá-los |
-| **Script Node de verificação** (gerado pelo agente, executado localmente) | Conferência automática do tracker: falas citadas existem na transcrição, caminhos de código existem, todos os IDs dos documentos têm linha e o percentual de fontes atende o mínimo |
-| **GitHub CLI** (`gh`, sem IA) | Fork para a conta `cleocetaceo` e push, com a mesma sessão autenticada usada nos outros desafios do MBA |
-
 ## Workflow adotado
 
 1. **Contexto antes de texto.** O agente leu o enunciado, a transcrição completa e os arquivos de integração do OMS: `order.service.ts`, `order.status.ts`, `app-error.ts`, `http-errors.ts`, `error.middleware.ts`, `auth.middleware.ts`, `schema.prisma`, `server.ts`, `app.ts`, `routes/index.ts` e o logger.
@@ -153,7 +144,6 @@ O código da aplicação (`src/`, `prisma/`, `tests/`) e a `TRANSCRICAO.md` não
 | FDD com fluxos, 7 endpoints com request, response e status, erros `WEBHOOK_*`, resiliência, logs, métricas, tracing e integração em mais de 4 arquivos reais | Atendido |
 | 7 ADRs no formato `ADR-NNN-titulo.md`, com Status, Contexto, Decisão, Alternativas e Consequências, cobrindo as 6 decisões principais. O ADR-006 cita arquivos reais | Atendido |
 | Tracker com as 6 colunas, 297 linhas, 85,9% com fonte `TRANSCRICAO` e 42 com `CODIGO`. Os 216 IDs dos documentos têm linha | Atendido |
-| README com as 6 seções, ferramenta de IA, 3 prompts em bloco de código e 4 iterações | Atendido |
 
 Dois pontos não são itens faltando, mas são os únicos que um avaliador pode questionar.
 
