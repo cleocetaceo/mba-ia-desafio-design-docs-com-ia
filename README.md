@@ -8,30 +8,6 @@ Uma empresa que opera um Order Management System em produção decidiu, numa reu
 
 A regra central é que nada pode ser inventado. Cada requisito, decisão e restrição precisa apontar para uma fala da reunião ou para um arquivo real do repositório. Isso exige separar o que foi decidido do que foi descartado ou adiado. O código da aplicação (`src/`, `prisma/`, `tests/`) não foi alterado: a entrega é só documental.
 
-## Workflow adotado
-
-1. **Contexto antes de texto.** O agente leu o enunciado, a transcrição completa e os arquivos de integração do OMS: `order.service.ts`, `order.status.ts`, `app-error.ts`, `http-errors.ts`, `error.middleware.ts`, `auth.middleware.ts`, `schema.prisma`, `server.ts`, `app.ts`, `routes/index.ts` e o logger.
-2. **Plano em modo Plan.** Antes de escrever, o agente produziu um plano com o que a reunião fechou, o que ficou fora, a fronteira entre os documentos e a lista de ADRs. O plano foi revisado e ajustado antes da execução (ver "Iterações e ajustes").
-3. **Ordem de produção**, a sugerida no enunciado:
-   1. **ADRs**, como esqueleto das decisões (7 arquivos, cobrindo as 6 decisões obrigatórias mais o snapshot de payload);
-   2. **RFC**, consolidando a proposta e linkando os ADRs, sem detalhe de implementação;
-   3. **FDD**, o nível de implementação, com a seção "Integração com o sistema existente" construída arquivo por arquivo;
-   4. **PRD**, por último entre os grandes documentos, como consolidação em linguagem de produto;
-   5. **TRACKER**, varrendo os documentos prontos;
-   6. **README**.
-4. **IDs dentro dos documentos.** Cada item verificável do PRD, RFC e FDD recebeu um ID entre colchetes (`[PRD-FR-01]`, `[FDD-CONTRATO-05]`...), e o tracker usa os mesmos IDs. Assim, qualquer linha do tracker localiza o item no documento e vice-versa.
-5. **Verificação automática e revisão.** O script de verificação rodou sobre o tracker e sobre todas as citações `[hh:mm] Nome` dos documentos. Depois, o pacote foi revisado contra a checklist de critérios de aceite do enunciado.
-
-Interação com a IA: o kickoff foi um pedido curto, e o refinamento aconteceu no plano. As duas mensagens que abriram o trabalho foram:
-
-```text
-Analise o documento @docs/mba-ia-desafio-design-docs-com-ia.md e planeje a implementação
-```
-
-```text
-Para autenticar no GitHub analise o projeto @mba-ia-desafio-ingestao-busca
-```
-
 ## Prompts customizados
 
 Os prompts abaixo foram escritos para este desafio. Eles direcionaram o agente na classificação da transcrição, na seção de integração do FDD e na auditoria do tracker.
