@@ -8,6 +8,22 @@ Uma empresa que opera um Order Management System em produção decidiu, numa reu
 
 A regra central é que nada pode ser inventado. Cada requisito, decisão e restrição precisa apontar para uma fala da reunião ou para um arquivo real do repositório. Isso exige separar o que foi decidido do que foi descartado ou adiado. O código da aplicação (`src/`, `prisma/`, `tests/`) não foi alterado: a entrega é só documental.
 
+## Ferramentas de IA utilizadas
+
+- **Cursor:** produção dos design docs a partir da transcrição e do código do OMS.
+- **GitHub CLI:** publicação do fork público.
+
+## Workflow adotado
+
+Os documentos foram produzidos na ordem sugerida pelo enunciado: primeiro as decisões, depois a proposta e o detalhe técnico, e por último a consolidação em nível de produto e a rastreabilidade.
+
+1. **ADRs**, registrando as decisões fechadas na reunião.
+2. **RFC**, com a proposta, as alternativas descartadas e o que ficou em aberto.
+3. **FDD**, com o detalhe de implementação.
+4. **PRD**, consolidando problema, escopo e requisitos.
+5. **Tracker**, ligando cada item à transcrição ou ao código.
+6. **README**, descrevendo o processo.
+
 ## Prompts customizados
 
 Os prompts abaixo foram escritos para este desafio. Eles direcionaram o agente na classificação da transcrição, na seção de integração do FDD e na auditoria do tracker.
