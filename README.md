@@ -141,3 +141,21 @@ ADRs:
 - [ADR-007: Payload renderizado (snapshot) na inserção da outbox](docs/adrs/ADR-007-snapshot-de-payload-na-insercao.md)
 
 Fonte primária: [TRANSCRICAO.md](TRANSCRICAO.md), mantida sem alteração.
+
+## Critérios do desafio
+
+O código da aplicação (`src/`, `prisma/`, `tests/`) e a `TRANSCRICAO.md` não foram alterados. A conferência abaixo usa a checklist do enunciado.
+
+| Critério | Situação |
+|---|---|
+| PRD com as 12 seções, 16 requisitos funcionais, meta quantitativa (p95 abaixo de 10 s), 8 itens fora de escopo e 6 riscos com probabilidade, impacto e mitigação | Atendido |
+| RFC com metadados e revisores da reunião, alternativas descartadas com trade-off, questões em aberto e links para os 7 ADRs | Atendido |
+| FDD com fluxos, 7 endpoints com request, response e status, erros `WEBHOOK_*`, resiliência, logs, métricas, tracing e integração em mais de 4 arquivos reais | Atendido |
+| 7 ADRs no formato `ADR-NNN-titulo.md`, com Status, Contexto, Decisão, Alternativas e Consequências, cobrindo as 6 decisões principais. O ADR-006 cita arquivos reais | Atendido |
+| Tracker com as 6 colunas, 297 linhas, 85,9% com fonte `TRANSCRICAO` e 42 com `CODIGO`. Os 216 IDs dos documentos têm linha | Atendido |
+| README com as 6 seções, ferramenta de IA, 3 prompts em bloco de código e 4 iterações | Atendido |
+
+Dois pontos não são itens faltando, mas são os únicos que um avaliador pode questionar.
+
+- A Larissa falou "total 5 tentativas" e o FDD registra 6 envios (1 inicial mais 5 retentativas) para fechar a conta de quase 15 horas do Diego. O [ADR-003](docs/adrs/ADR-003-retry-backoff-e-dlq.md) explica essa escolha.
+- O FDD nomeia arquivos que ainda não existem, como `src/worker.ts` e `src/modules/webhooks/`, e os marca como novos. A seção de integração também cita caminhos que já existem no repositório.
